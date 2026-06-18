@@ -1,0 +1,50 @@
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+    <g class="bg-contour-slow">
+      <path d="M-100 100 Q 200 160, 400 80 T 800 140 T 1200 70 T 1600 120" stroke-width="1.5" stroke-dasharray="8 4" class="stroke-copper-500/20 dark:stroke-copper-400/15"/>
+      <path d="M-100 300 Q 250 370, 500 280 T 1000 320 T 1400 260 T 1600 310" stroke-width="1.2" class="stroke-copper-500/15 dark:stroke-copper-400/12"/>
+      <path d="M-100 500 Q 180 560, 350 490 T 700 520 T 1050 470 T 1600 510" stroke-width="1" stroke-dasharray="6 3" class="stroke-copper-500/18 dark:stroke-copper-400/13"/>
+      <path d="M-100 700 Q 220 760, 450 690 T 900 720 T 1350 670 T 1600 710" stroke-width="0.8" class="stroke-copper-500/12 dark:stroke-copper-400/10"/>
+    </g>
+    <g class="bg-contour-mid">
+      <path d="M-100 180 Q 300 240, 550 160 T 1100 200 T 1500 150 T 1600 190" stroke-width="1.2" class="stroke-copper-500/22 dark:stroke-copper-400/18"/>
+      <path d="M-100 400 Q 200 460, 420 380 T 850 420 T 1250 370 T 1600 410" stroke-width="1" stroke-dasharray="4 5" class="stroke-copper-500/16 dark:stroke-copper-400/13"/>
+      <path d="M-100 600 Q 280 660, 480 580 T 950 620 T 1300 570 T 1600 610" stroke-width="0.9" class="stroke-copper-500/14 dark:stroke-copper-400/11"/>
+      <path d="M-100 800 Q 150 850, 380 790 T 750 820 T 1150 780 T 1600 810" stroke-width="0.7" stroke-dasharray="3 6" class="stroke-copper-500/10 dark:stroke-copper-400/8"/>
+    </g>
+    <g class="bg-contour-fast">
+      <path d="M-100 40 Q 220 100, 450 30 T 900 60 T 1300 20 T 1600 50" stroke-width="1" class="stroke-copper-500/25 dark:stroke-copper-400/20"/>
+      <path d="M-100 240 Q 180 290, 380 230 T 750 260 T 1150 220 T 1600 250" stroke-width="0.8" stroke-dasharray="5 4" class="stroke-copper-500/18 dark:stroke-copper-400/14"/>
+      <path d="M-100 460 Q 300 520, 520 440 T 1000 480 T 1400 430 T 1600 470" stroke-width="0.7" class="stroke-copper-500/13 dark:stroke-copper-400/10"/>
+      <path d="M-100 660 Q 200 720, 400 640 T 800 680 T 1200 630 T 1600 670" stroke-width="0.6" class="stroke-copper-500/15 dark:stroke-copper-400/12"/>
+      <path d="M-100 860 Q 250 910, 500 850 T 1000 880 T 1400 840 T 1600 870" stroke-width="0.5" stroke-dasharray="2 5" class="stroke-copper-500/10 dark:stroke-copper-400/8"/>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .bg-contour-slow {
+    animation: bg-contour-drift 60s ease-in-out infinite alternate;
+  }
+  .bg-contour-mid {
+    animation: bg-contour-drift 35s ease-in-out infinite alternate;
+  }
+  .bg-contour-fast {
+    animation: bg-contour-drift 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes bg-contour-drift {
+    0% { transform: translate(0, 0) scaleY(1); }
+    33% { transform: translate(20px, -8px) scaleY(1.02); }
+    66% { transform: translate(-10px, 12px) scaleY(0.98); }
+    100% { transform: translate(15px, -5px) scaleY(1.01); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-contour-slow,
+    .bg-contour-mid,
+    .bg-contour-fast {
+      animation: none;
+    }
+  }
+</style>

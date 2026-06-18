@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog - Ntang" description="Mining engineering articles and reflections.">
+  <Nav />
+  <main class="pt-24 pb-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 pt-8">
+        <p class="text-copper-600 dark:text-copper-400 font-mono text-sm font-medium mb-3 tracking-widest uppercase">Blog</p>
+        <h1 class="text-4xl font-bold text-slate-900 dark:text-white">All Posts</h1>
+        <div class="w-16 h-1 bg-copper-600 rounded-full mx-auto mt-4"></div>
+        <p class="mt-4 text-sand-600 dark:text-sand-400 max-w-xl mx-auto">
+          Thoughts on mining engineering, field experiences, and industry insights.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {sorted.map((post) => (
+          <a
+            href={`/blog/${post.id}`}
+            class="group block p-6 sm:p-8 rounded-2xl bg-white dark:bg-sand-800 border border-sand-300 dark:border-sand-700 hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <span class="text-sm font-mono text-sand-500 dark:text-sand-600">
+              {new Date(post.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </span>
+            <h2 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white group-hover:text-copper-600 dark:group-hover:text-copper-400 transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="mt-2 text-sand-600 dark:text-sand-400">
+              {post.data.description}
+            </p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              {post.data.tags.map((tag) => (
+                <span class="px-2 py-0.5 text-xs font-medium bg-sand-200 dark:bg-sand-700 text-sand-700 dark:text-sand-400 rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,117 @@
+---
+
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Education", href: "#education" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Blog", href: "#blog" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-[100] bg-sand-50/80 dark:bg-sand-950/80 backdrop-blur-md border-b border-sand-300 dark:border-sand-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="text-lg font-semibold tracking-tight flex items-center gap-2 group">
+        <span class="w-7 h-7 rounded-lg bg-copper-600 flex items-center justify-center logo-hover shrink-0">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 6 Q12 2.5 18 6 L18 9 L12 12 Z" />
+            <path d="M12 12 L12 22" />
+            <path d="M10.5 11.5 L13.5 11.5" />
+          </svg>
+        </span>
+        <span class="text-slate-900 dark:text-white">ntang</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-1">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="relative px-3 py-2 text-sm font-medium text-sand-700 hover:text-copper-600 dark:text-sand-400 dark:hover:text-copper-400 rounded-lg hover:bg-sand-100 dark:hover:bg-sand-800 transition-colors nav-link"
+          >
+            {link.label}
+          </a>
+        ))}
+        <button
+          id="theme-toggle"
+          class="ml-3 p-2 text-sand-700 hover:text-copper-600 dark:text-sand-400 dark:hover:text-copper-400 rounded-lg hover:bg-sand-100 dark:hover:bg-sand-800 transition-colors"
+          aria-label="Toggle dark mode"
+          type="button"
+        >
+          <svg id="sun-icon" class="hidden w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="moon-icon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-sand-700 dark:text-sand-400 rounded-lg hover:bg-sand-100 dark:hover:bg-sand-800 transition-colors"
+        aria-label="Open menu"
+        type="button"
+      >
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="menu-scrim" class="fixed inset-0 bg-sand-950/40 z-40 hidden md:hidden"></div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-sand-300 dark:border-sand-800 bg-sand-50 dark:bg-sand-950 relative z-50">
+    <div class="px-4 py-3 space-y-1">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="block px-3 py-3 text-sm font-medium text-sand-700 hover:text-copper-600 dark:text-sand-400 dark:hover:text-copper-400 rounded-lg hover:bg-sand-100 dark:hover:bg-sand-800 transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <button
+        id="theme-toggle-mobile"
+        class="flex items-center gap-2 w-full px-3 py-3 text-sm font-medium text-sand-700 hover:text-copper-600 dark:text-sand-400 dark:hover:text-copper-400 rounded-lg hover:bg-sand-100 dark:hover:bg-sand-800 transition-colors"
+        aria-label="Toggle dark mode"
+        type="button"
+      >
+        <svg id="sun-icon-mobile" class="hidden w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="moon-icon-mobile" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span>Dark Mode</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const html = document.documentElement;
+
+  function updateIcons() {
+    const isDark = html.classList.contains('dark');
+    document.querySelectorAll('#sun-icon, #sun-icon-mobile').forEach(el => el.classList.toggle('hidden', !isDark));
+    document.querySelectorAll('#moon-icon, #moon-icon-mobile').forEach(el => el.classList.toggle('hidden', isDark));
+  }
+
+  function toggleDark() {
+    html.classList.toggle('dark');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    updateIcons();
+  }
+
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleDark);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleDark);
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const scrim = document.getElementById('menu-scrim');
+    menu?.classList.toggle('hidden');
+    scrim?.classList.toggle('hidden');
+  }
+
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMenu);
+  document.getElementById('menu-scrim')?.addEventListener('click', toggleMenu);
+
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
+  updateIcons();
+</script>

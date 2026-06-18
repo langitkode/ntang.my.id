@@ -1,0 +1,18 @@
+{
+  "name": "ntang-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Mining Engineering Portfolio",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "astro": "^6.4.8",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.1"
+  }
+}

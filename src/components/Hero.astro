@@ -1,0 +1,84 @@
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <svg class="w-full h-full" preserveAspectRatio="none">
+      <defs>
+        <pattern id="topo-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" stroke-width="0.5" class="text-copper-500/15 dark:text-copper-400/10"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#topo-grid)"/>
+    </svg>
+  </div>
+
+  <div class="absolute top-4 left-4 font-mono text-[10px] tracking-wider text-copper-600/40 dark:text-copper-400/30 pointer-events-none hidden sm:block" aria-hidden="true">
+    <div>S-06-2024-001</div>
+    <div>SCALE 1:24,000</div>
+  </div>
+
+  <div class="absolute bottom-4 right-4 font-mono text-[10px] text-copper-600/30 dark:text-copper-400/25 pointer-events-none hidden sm:block text-right leading-relaxed" aria-hidden="true">
+    <div>7.8012 S  110.3645 E</div>
+    <div>ELEV 174m - YOGYAKARTA, ID</div>
+  </div>
+
+  <div class="relative z-10 w-full">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <div class="max-w-3xl fade-in">
+
+        <div class="font-mono text-xs tracking-[0.25em] text-copper-600 dark:text-copper-400 mb-5 flex items-center gap-3">
+          <span class="w-8 h-px bg-copper-500/50 block"></span>
+          SURVEY STAMP
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.85] text-slate-900 dark:text-white select-none">
+          <span class="block">MACHIKO</span>
+          <span class="block">BINTANG</span>
+        </h1>
+
+        <div class="h-px w-32 bg-copper-500/40 my-6"></div>
+
+        <p class="font-mono text-base text-sand-700 dark:text-sand-400">
+          Mining Engineering - ITNY Yogyakarta
+        </p>
+
+        <p class="text-lg sm:text-xl text-sand-700 dark:text-sand-400 mt-8 leading-relaxed max-w-xl">
+          I read rock, design blast patterns, and figure out how to extract what we need without burying the people above the deposit.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10 mb-20 sm:mb-0">
+          <a href="#projects" class="btn-scale inline-flex items-center gap-2 px-6 py-3 bg-copper-600 hover:bg-copper-700 text-white font-medium rounded-lg shadow-lg shadow-copper-600/20 transition-all">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Explore Site
+          </a>
+          <a href="/blog" class="btn-scale inline-flex items-center gap-2 px-6 py-3 border border-sand-300 dark:border-sand-700 text-sand-700 dark:text-sand-300 font-medium rounded-lg hover:bg-sand-100 dark:hover:bg-sand-800 transition-all">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></polyline></svg>
+            Borehole Logs
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden lg:block absolute bottom-32 right-12 pointer-events-none" aria-hidden="true">
+      <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-25 dark:opacity-20">
+        <line x1="70" y1="6" x2="70" y2="134" stroke="currentColor" stroke-width="1.5" class="text-copper-600"/>
+        <line x1="6" y1="70" x2="134" y2="70" stroke="currentColor" stroke-width="1.5" class="text-copper-600"/>
+        <polygon points="70,6 75,56 70,60 65,56" fill="currentColor" class="text-copper-600"/>
+        <polygon points="70,134 65,84 70,80 75,84" fill="currentColor" class="text-copper-500"/>
+        <polygon points="6,70 56,65 60,70 56,75" fill="currentColor" class="text-copper-500"/>
+        <polygon points="134,70 84,75 80,70 84,65" fill="currentColor" class="text-copper-600"/>
+        <circle cx="70" cy="70" r="4" fill="currentColor" class="text-copper-600"/>
+        <circle cx="70" cy="70" r="48" stroke="currentColor" stroke-width="0.5" class="text-copper-600" opacity="0.4"/>
+        <circle cx="70" cy="70" r="58" stroke="currentColor" stroke-width="0.3" class="text-copper-600" opacity="0.25"/>
+        <text x="70" y="30" text-anchor="middle" fill="currentColor" class="text-copper-600" font-size="8" font-family="monospace" opacity="0.5">N</text>
+        <text x="70" y="114" text-anchor="middle" fill="currentColor" class="text-copper-600" font-size="8" font-family="monospace" opacity="0.5">S</text>
+        <text x="28" y="73" text-anchor="middle" fill="currentColor" class="text-copper-600" font-size="8" font-family="monospace" opacity="0.5">W</text>
+        <text x="112" y="73" text-anchor="middle" fill="currentColor" class="text-copper-600" font-size="8" font-family="monospace" opacity="0.5">E</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+    <span class="font-mono text-[10px] tracking-[0.3em] text-sand-500 dark:text-sand-600">SCROLL</span>
+    <svg class="w-4 h-4 text-sand-500 dark:text-sand-600 animate-bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+  </div>
+</section>
